@@ -8,21 +8,17 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     const root = document.getElementById("root");
-    let counter = 0;
-    function countUp() {
-      counter = counter + 1;
-      render();
-    }
-    function render() {
-      ReactDOM.render(<Container />, root);
-    }
     // 화살표 함수는 function과 return 을 포함하고 있음
-    const Container = () => (
-      <div>
-        <h3>Total clicks: {counter}</h3>
-        <button onClick={countUp}>Click me</button>
-      </div>
-    );
-    render();
+    function App() {
+      const [counter, modifier] = React.useState(0);
+
+      return (
+        <div>
+          <h3>Total clicks: {counter}</h3>
+          <button>Click me</button>
+        </div>
+      );
+    }
+    ReactDOM.render(<App />, root);
   </script>
 </html>
