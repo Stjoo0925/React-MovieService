@@ -10,15 +10,24 @@
     const root = document.getElementById("root");
     // 화살표 함수는 function과 return 을 포함하고 있음
     function App() {
-      const [counter, setCounter] = React.useState(0);
-      const onClick = () => {
-        // setCounter(counter + 1);
-        setCounter((current) => current + 1);
+      const [minutes, setMinutes] = React.useState();
+      const onChange = (event) => {
+        setMinutes(event.target.value);
       };
       return (
         <div>
-          <h3>Total clicks: {counter}</h3>
-          <button onClick={onClick}>Click me</button>
+          <h1 className="hi">Super Converter</h1>
+          <lable htmlFor="minutes">Minutes</lable>
+          <input
+            value={minutes}
+            id="minutes"
+            placeholder="Minutes"
+            type="number"
+            onChange={onChange}
+          />
+          <h4>You want to convert {minutes}</h4>
+          <lable htmlFor="hours">Hours</lable>
+          <input id="hours" placeholder="Hours" type="number" />
         </div>
       );
     }
