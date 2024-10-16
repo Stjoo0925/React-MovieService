@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Movie from "./components/Movie";
+import Movie from "../components/Movie";
 
 function Home() {
   const [loading, setLoading] = useState(true);
